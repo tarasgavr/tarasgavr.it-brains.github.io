@@ -1,0 +1,52 @@
+<section>
+  <div>
+    {{> title data="My work history" line=true big=true }}
+    <div>{{> title data="I worked as" }}</div>
+      <ul>
+    {{#each main.works}}
+        <li>
+          {{position}} from {{duration.from}} 
+          {{#if duration.to}}
+            to {{duration.to}}
+          {{else}} 
+            til now
+          {{/if}}
+          at {{#if company.url}}
+          {{> link href=company.url text=company.title noLine=true blank=true }} 
+          {{else}} 
+            <b>{{company.title}}</b>
+          {{/if}}
+          <br> 
+          {{company.description}}
+          <br>
+          <br>
+          <div><strong>Projects ({{projectAmount}})</strong></div>
+          <br>
+          <ol>
+          {{#each projects}}
+            <li>
+            {{> link href=url text=title noLine=true blank=true }}
+             <div>
+              <p>{{about}}</p>
+             </div>
+             <div><em>Project stacks ({{stackAmount}})</em></div>
+             <ul>
+              {{#each stacks}}
+              <li>{{title}}</li>
+              {{/each}}
+             </ul>
+             <div><em>Project awards</em></div>
+             <ul>
+              {{#each awards}}
+              <li>{{title}}</li>
+              {{/each}}
+              <br>
+             </ul>
+            </li>
+          {{/each}}
+          </ol>
+        </li>
+    {{/each}}        
+      </ul>
+  </div>
+</section>

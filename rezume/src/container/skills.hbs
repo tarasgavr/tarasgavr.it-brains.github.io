@@ -1,0 +1,21 @@
+<section>
+  <div>
+    {{> title data="My skills" line=true big=true }}
+      <ul>
+    {{#each main.skills}}
+        <li>{{title}}</li>
+    {{/each}}
+      </ul>
+  </div>
+</section>
+<section>
+  <div>
+    {{> title data="My hobbies" line=true }}
+      <ol>
+    {{#each main.hobbies}}
+        <li>{{title}} {{#if isMain}} (favorite) {{/if}}
+        </li>
+    {{/each}}
+      </ol>
+  </div>
+</section>
