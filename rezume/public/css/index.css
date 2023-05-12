@@ -17,3 +17,7 @@ nav {
 section {
   padding: 16px;
 }
+
+table,td {
+  border: 1px solid #000;
+}

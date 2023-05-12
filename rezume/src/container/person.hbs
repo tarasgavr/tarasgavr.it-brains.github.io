@@ -1,8 +1,73 @@
+<section>
 {{#with person}}
-  <section>
+  <center>
     {{> title data=name big=true }}
+  </center>
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          Personal information
+        </td>
+        <td>
+          <ul>
+            <li>
+              <span>Age:</span><span>{{age}}</span>
+            </li>
+            <li>
+              <span>Gender:</span><span>{{gender}}</span>
+            </li>
+            <li>
+              <span>Address:</span>
+              <address>            
+                {{#each address}}
+                  {{this}}
+                {{/each}}
+                </address>
+            </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Education
+        </td>
+        <td>
+          <ul>
+            {{#each education}}
+              <li>
+                <span>Degree:</span><span>{{degree}}</span>
+              </li>
+              <li>
+                <span>Major:</span><span>{{major}}</span>
+              </li>
+              <li>
+                <span>University:</span><span>{{university}}</span>
+              </li>
+              <li>
+                <span>Year of graduation:</span><span>{{graduationYear}}</span>
+              </li>
+            {{/each}}
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          {{> title data="Work experience" big=false }}
+        </td>
+        <td>
+          <ul>
+            {{#each workExperience}}
+            <li>                
+              <span>Company:</span><span>{{company}}</span>
+            </li>
+            {{/each}}
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table> 
     <span></span>
-    <span>Age</span><span>{{age}}</span>
     {{> hspcln }}
-  </section>
 {{/with}}
+</section>
