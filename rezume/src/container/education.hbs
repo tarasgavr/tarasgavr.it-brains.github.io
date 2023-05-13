@@ -1,0 +1,26 @@
+<section>
+  <div>
+    <h2>{{> title data="My educations" line=true }}</h2>
+    <div>{{> title data="I'd studied at" }}</div>
+      <ul> 
+    {{#each main.educations}}
+        <li>{{title}} {{#if type}} {{type}} {{/if}} for {{duration_term}} {{duration_unit}} {{#unless isEnd}}
+          <i>(not yet terminated)</i>
+        {{/unless}}
+        </li>
+    {{/each}}
+      </ul>
+  </div>
+</section>
+<section>
+  <div>
+    <h2>{{> title data="My certificates" line=true }}</h2>
+      <ul> 
+    {{#each main.certificates}}
+        <li>{{title}} 
+        ({{id}})
+        </li>
+    {{/each}}
+      </ul>
+  </div>
+</section>
