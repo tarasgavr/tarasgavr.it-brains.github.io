@@ -1,0 +1,234 @@
+<section>
+  <center>
+    {{> title data=name big=true }}
+  </center>
+  <table>
+    <tbody>
+      <tr>
+        <td> General information</td>
+        <td>
+          <ul>
+            <li>
+              <span>Birthdate:</span>
+                  <time datetime="{{birthdate}}">{{birthdate}}</time>
+            </li>
+            <li>
+              <span>Birthplace:</span>
+                  <address>
+                  {{birthplace}}
+                </address>
+            </li>
+            <li>
+              <span>Deathdate:</span>
+                  <time datetime="{{deathdate}}">{{deathdate}}</time>
+            </li>
+            <li>
+              <span>Deathplace:</span>
+                  <address>
+                  {{deathplace}}
+                </address>
+            </li>
+            <li>
+              <span>Nationality:</span>
+              <span>
+                <strong>
+                  {{nationality}}
+                </strong>
+              </span>
+            </li>
+            <li>
+              <span>Occupation:</span>
+              <span><em>{{occupation}}</em></span>
+            </li>
+            <li>
+              <dl>
+                <dt>
+                  <span>Known for:</span>
+                </dt>
+                {{#each known_for}}
+                <dd>
+                  {{this}}
+                </dd>
+                {{/each}}
+              </dl>
+            </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Education</td>
+        <td>
+          <ul>
+            {{#each education}}
+              <li>
+                <span>Degree:</span><span>{{degree}}</span>
+              </li>
+              <li>
+                <span>Field:</span><span>{{field}}</span>
+              </li>
+              <li>
+                <span>Institution:</span><span>{{institution}}</span>
+              </li>
+              <li>
+                <span>Year:</span>
+                <time datetime="{{year}}">{{year}}</time>
+              </li>
+            {{/each}}
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Notable publications</td>
+        <td>
+          <ol>
+            {{#each notable_publications}}
+            <li>
+              <ul>
+                <li>                
+                  <span>Title:</span>
+                  <span><cite>{{title}}</cite></span>
+                </li>
+                <li>
+                  <span>Year:</span>
+                  <time datetime="{{year}}">{{year}}</time>
+                </li>
+                <li>                
+                  <span>Publisher:</span>
+                  <span>{{publisher}}</span>
+                </li>
+              </ul>
+            </li>
+            <br>        
+           {{/each}}
+          </ol>
+        </td>
+      </tr>
+      <tr>
+        <td>Partners</td>
+        <td>
+          <ul>
+            {{#each partners}}
+            <li>                
+              <span>Name:</span>
+              <span>{{name}}</span>
+            </li>
+            <li>                
+              <span>Relationship:</span>
+              <span>{{relationship}}</span>
+            </li>
+            <li>
+               <span>Years:</span>
+               <time datetime="{{years}}">{{years}}</time>
+            </li>
+            <br>
+            {{/each}}
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Awards</td>
+        <td>
+          <ul>
+            {{#each awards}}
+            <li>                
+              <span>Title:</span>
+              <span><cite>{{title}}</cite></span>
+            </li>
+            <li>
+               <span>Year:</span>
+               <time datetime="{{year}}">{{year}}</time>
+            </li>
+            <li>                
+              <span>Description:</span>
+              <span><q>{{description}}</q></span>
+            </li>
+            {{/each}}
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Influence</td>
+        <td>
+          <ul>
+            {{#each influence}}
+            <li>                
+              <cite>{{this}}</cite>
+            </li>
+            {{/each}}
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Influenced</td>
+        <td>
+          <ul>
+            {{#each influenced}}
+            <li>                
+              <cite>{{this}}</cite>
+            </li>
+            {{/each}}
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Quotes</td>
+        <td>
+          <ul>
+            {{#each quotes}}
+            <li>                
+              <q>{{this}}</q>
+            </li>
+            {{/each}}
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Major discoveries</td>
+        <td>
+          <ul>
+            {{#each major_discoveries}}
+            <li>                
+              <span>Title:</span>
+              <span><cite>{{title}}</cite></span>
+            </li>
+            <li>
+               <span>Year:</span>
+               <time datetime="{{year}}">{{year}}</time>
+            </li>
+            <li>                
+              <span>Description:</span>
+              <blockquote>{{description}}</blockquote>
+            </li>
+            {{/each}}
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Contributions</td>
+        <td>
+          <ul>
+            {{#with contributions}}
+            <li>                
+              <span>Title:</span>
+              <span><cite>{{title}}</cite></span>
+            </li>
+            <li>
+               <span>Year:</span>
+               <time datetime="{{year}}">{{year}}</time>
+            </li>
+            <li>                
+              <span>Description:</span>
+              <blockquote>{{description}}</blockquote>
+            </li>
+            <li>                
+              <span>ield:</span>
+              <span><cite>{{field}}</cite></span>
+            </li>
+            {{/with}}
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table> 
+  {{> hspcln }}
+</section>
