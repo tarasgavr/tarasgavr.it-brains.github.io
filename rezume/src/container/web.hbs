@@ -1,0 +1,124 @@
+<section>
+  <center>
+    Basic {{> title data=title big=true }} tools
+  </center>
+{{#with web}}
+  <table>
+    <tbody>
+      <tr>
+        <td>Main means</td>
+        <td>
+          <ul>
+             {{#each languages}}
+            <li>
+              <span>Title:</span><span>{{name}}</span>
+            </li>
+            <li>
+              <span>Version:</span><span>{{version}}</span>
+            </li>
+            <li>
+              <span>Description:</span><span>{{description}}</span>
+            </li>
+            {{#if elements}}
+              <li>                  
+                <span>Elements:</span>
+                <ul>                      
+                    {{#each elements}}
+                    <br>
+                    <li>                        
+                      <span>Title:</span><span>{{name}}</span>
+                    </li>                      
+                    <li>
+                      <span>Description:</span><span>{{description}}</span>
+                    </li>
+                    <li>
+                      <span>Áttributes:</span>
+                      <ul>
+                        {{#each attributes}}
+                        <br>
+                          <li>                        
+                            <span>Title:</span><span>{{name}}</span>
+                          </li>
+                          <li>                        
+                            <span>Description:</span><span>{{description}}</span>
+                          </li>
+                          {{/each}}
+                        </ul>
+                      </li>
+                      {{/each}}
+                  </ul>
+                </li>
+                    {{/if}}
+                    {{#if properties}}
+                <li>                  
+                  <span>Properties:</span>
+                  <ul>                      
+                      {{#each properties}}
+                      <br>
+                      <li>                        
+                        <span>Title:</span><span>{{name}}</span>
+                      </li>                      
+                      <li>
+                        <span>Description:</span><span>{{description}}</span>
+                      </li>
+                      <li>
+                        <span>Values:</span>
+                        <ul>
+                          {{#each values}}
+                          <br>
+                            <li>                        
+                              <span>Value:</span><span>{{value}}</span>
+                            </li>
+                            <li>                        
+                              <span>Description:</span><span>{{description}}</span>
+                            </li>
+                            {{/each}}
+                          </ul>
+                        </li>
+                        {{/each}}
+                    </ul>
+                  </li>
+                    {{/if}}
+                    {{#if functions}}
+                  <li>                  
+                    <span>Functions:</span>
+                    <ul>                      
+                        {{#each functions}}
+                        <br>
+                        <li>                        
+                          <span>Title:</span><span>{{name}}</span>
+                        </li>                      
+                        <li>
+                          <span>Description:</span><span>{{description}}</span>
+                        </li>
+                        <li>
+                          <span>Parameters:</span>
+                          <ul>
+                            {{#each parameters}}
+                            <br>
+                              <li>                        
+                                <span>Title:</span><span>{{name}}</span>
+                              </li>
+                              <li>                        
+                                <span>Type:</span><span>{{type}}</span>
+                              </li>
+                              <li>                        
+                                <span>Description:</span><span>{{description}}</span>
+                              </li>
+                              {{/each}}
+                            </ul>
+                          </li>
+                          {{/each}}
+                      </ul>
+                    </li>
+                      {{/if}}
+              </ul>              
+            </li>
+            {{/each}}
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table> 
+    {{/with}}
+</section>

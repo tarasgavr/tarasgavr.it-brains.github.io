@@ -1,0 +1,164 @@
+<section>
+{{#with program}}
+  <center>
+    Program of tbe 
+    {{#with excursion}}
+      {{> title data=name big=true }}
+      {{#with location}}
+        {{city}},{{country}}
+      {{/with}}
+  </center>
+      {{> title data=date simple=true }}
+  <table>
+    <tbody>
+      <tr>
+        <td>Excursion information</td>
+        <td>
+          <ul>
+             {{#each program}}
+            <li>
+              <span>Title:</span><span>{{name}}</span>
+            </li>
+            <li>
+              <span>Type:</span><span>{{type}}</span>
+            </li>
+            <li>
+              <span>Duration:</span><span>{{duration}}</span>
+            </li>
+            <li>
+              <span>Details:</span>
+              <ul>                
+              {{#with details}}
+                  {{#if museum}}
+                <li>                  
+                  <span>Museum:</span>
+                  <ul>                      
+                      {{#with museum}}
+                      <br>
+                      <li>                        
+                        <span>Title:</span><span>{{name}}</span>
+                      </li>
+                      <li>                        
+                        <span>Location:</span>
+                        <ul>
+                          {{#with location}}
+                          <br>
+                            <li>                        
+                              <span>Address:</span><span>{{address}}</span>
+                            </li>
+                            <li>                        
+                              <span>City:</span><span>{{city}}</span>
+                            </li>
+                            <li>                        
+                              <span>Country:</span><span>{{country}}</span>
+                            </li>
+                            <br>
+                          {{/with}}     
+                        </ul>
+                      </li>
+                      <li>
+                        <span>Exhibits:</span>
+                        <ul>
+                          {{#each exhibits}}
+                          <br>
+                            <li>                        
+                              <span>Name:</span><span>{{name}}</span>
+                            </li>
+                            {{#if artist}}
+                            <li>                        
+                              <span>Artist:</span><span>{{artist}}</span>
+                            </li>
+                            {{/if}}
+                            <li>                        
+                              <span>Description:</span><span>{{description}}</span>
+                            </li>
+                            <li>                        
+                              <span>Audio_guide:</span><span>{{audio_guide}}</span>
+                            </li>
+                            <br>
+                          {{/each}}     
+                        </ul>
+                      </li>
+                      {{/with}}
+                  </ul>
+                </li>
+                    {{/if}}
+                    {{#if venue}}
+                     <li>
+                      <span>Venue:</span>
+                      <ul>
+                        {{#with venue}}
+                        <br>
+                          <li>                        
+                            <span>Title:</span><span>{{name}}</span>
+                          </li>
+                          <li>                        
+                            <span>Location:</span>
+                            <ul>
+                              {{#with location}}
+                              <br>
+                                <li>                        
+                                  <span>Address:</span><span>{{address}}</span>
+                                </li>
+                                <li>                        
+                                  <span>City:</span><span>{{city}}</span>
+                                </li>
+                                <li>                        
+                                  <span>Country:</span><span>{{country}}</span>
+                                </li>
+                                <br>
+                              {{/with}}     
+                            </ul>
+                          </li>
+                          <br>
+                        {{/with}}
+                      </ul>
+                     </li>
+                    {{/if}}
+                    {{#if performers}}
+                     <li>
+                      <span>Performers:</span>
+                      <ul>
+                        {{#each performers}}
+                        <br>
+                          <li>                        
+                            <span>Name:</span><span>{{name}}</span>
+                          </li>
+                          <li>                        
+                            <span>Type:</span><span>{{type}}</span>
+                          </li>
+                        {{/each}}
+                      </ul>
+                     </li>
+                    {{/if}}
+                <li>
+                  <span>Guide:</span>
+                  <ul>
+                    {{#with guide}}
+                    <br>
+                      <li>
+                        <span>Name:</span><span>{{name}}</span>
+                      </li>
+                      <li>
+                        <span>Language:</span><span>{{language}}</span>
+                      </li>
+                      <li>
+                        <span>Rating:</span><span>{{rating}}</span>
+                      </li>
+                    {{/with}}
+                  </ul>
+                </li>
+              {{/with}}
+              </ul>              
+            </li>
+            <br>
+            {{/each}}
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table> 
+    {{/with}}
+  {{> hspcln }}
+{{/with}}
+</section>
