@@ -2,6 +2,9 @@
   "name": "handlebars",
   "version": "0.0.0",
   "private": true,
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "start": "node ./index.js",
     "dev": "nodemon -e js,hbs,json,css ./index.js",
