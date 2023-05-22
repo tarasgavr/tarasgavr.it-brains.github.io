@@ -1,0 +1,70 @@
+<section>
+  <div class="text-center lh-1">    
+    <h2>  Basic {{name}} info</h2>
+    <p>  <dfn>{{description}}</dfn></p>
+    <p>{{name}} was created in 
+      {{#with history}} 
+        <time datetime="{{year}}">{{year}}</time> by {{founder}}
+      {{/with}}
+    </p>
+  </div>
+</section>
+<section>
+  <ul class="list-group">
+    <div class="fw-bold">Main types are</div>
+    {{#each types}}
+      <li class="list-group-item">{{this}}</li>
+    {{/each}}
+  </ul>
+</section>
+<section>
+  <ol class="list-group list-group-numbered">
+    <div class="fw-bold">Syntax for</div>
+    {{#each syntax}}
+    <li class="list-group-item"><span class="text-capitalize">{{@key}}</span>
+      <ul class="list-group">
+      {{#each this}}
+        <li class="list-group-item list-group-item-primary">{{this}}</li>
+      {{/each}}
+      </ul>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+<section>
+  <ul class="list-group">
+    <div class="fw-bold text-capitalize">features</div>
+    {{#each features}}
+      <li class="list-group-item">{{this}}</li>
+    {{/each}}
+  </ul>
+</section>
+<section>
+  <ul class="list-group">
+    <div class="fw-bold text-capitalize">libraries</div>
+    {{#each libraries}}
+      <li class="list-group-item">{{this}}</li>
+    {{/each}}
+  </ul>
+</section>
+<section>
+  <ul class="list-group">
+    <div class="fw-bold text-capitalize">tools</div>
+    {{#each tools}}
+      <li class="list-group-item">{{this}}</li>
+    {{/each}}
+  </ul>
+</section>
+<section>
+  <ol class="list-group list-group-numbered">
+    <div class="fw-bold text-capitalize">community</div>
+    {{#each community}}
+      <li class="list-group-item">
+        <ul class="list-group">
+          <li class="list-group-item list-group-item-info">{{name}}</li>
+          <li class="list-group-item list-group-item-info">{{type}}</li>
+        </ul>
+      </li>
+    {{/each}}
+  </ol>
+</section>
