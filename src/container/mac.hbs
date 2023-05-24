@@ -1,10 +1,9 @@
 <section>
   <div class="text-center lh-1">    
-    <h2>  Basic <span class="text-info"> {{make}} {{model}}</span> info</h2>
-    <p class="fs-3">The car was constructed in 
-        <time datetime="{{year}}">{{year}}</time>
-    </p>
-    <p class="fs-4">The car color is {{color}}</p>
+    <h2 class="text-info"> {{name}} info</h2>
+    <dfn class="fs-3">{{description}}</dfn>
+    <br>
+    <p class="fs-4">Computer price is {{price}}</p>
   </div>
 </section>
 <section>
@@ -21,18 +20,7 @@
           {{#each this}}
             <li class="list-group-item list-group-item-success">
               <span class="text-capitalize">{{@key}}: </span>
-                {{this}}         
-              {{!-- {{#if display}} --}}
-              <ul class="list-group">
-              {{#each this}}
-                <li class="list-group-item list-group-item-info">
-                  <span class="text-capitalize">{{@key}}: </span>
-                  {{this}}
-              {{/each}}
-              {{!-- {{else}}                --}}
-                </li>
-              </ul>
-              {{!-- {{/if}} --}}
+              {{this}}
             </li>
           {{/each}}
           </ul>
