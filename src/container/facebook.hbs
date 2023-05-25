@@ -8,13 +8,13 @@
 </section>
 <section>
   <ol class="list-group list-group-numbered">
-    <div class="fw-bold text-capitalize">features</div>
-    {{#each features}}
+    <div class="fw-bold text-capitalize">users</div>
+    {{#each users}}
     <li class="list-group-item">
-      <span class="text-capitalize">{{@key}}</span>
-      {{#unless ''}}
+      <span class="text-capitalize"></span>
+      {{#if ''}}
         {{this}}
-      {{/unless}}
+      {{/if}}
       <ul class="list-group">
       {{#each this}}
         <li class="list-group-item list-group-item-primary">
@@ -26,20 +26,28 @@
           {{#each this}}
             <li class="list-group-item list-group-item-success">
               <span class="text-capitalize">{{@key}}: </span>
-            {{!-- {{#if ''}} --}}
+            {{#if ''}}
                 {{this}}
-              {{!-- {{/if}} --}}
+              {{/if}}
               <ul class="list-group">
               {{#each this}}
                 <li class="list-group-item list-group-item-warning">
-                  {{!-- <span class="text-capitalize">{{@key}}: </span> --}}
+                  <span class="text-capitalize">{{@key}}: </span>
                   {{this}}
                   <ul class="list-group">
                   {{#each this}}
                     <li class="list-group-item list-group-item-danger">
-                      {{!-- <span class="text-capitalize">{{@key}}: </span> --}}
+                      <span class="text-capitalize">{{@key}}: </span>
                       {{this}}
-                      
+                      <ul class="list-group">
+                      {{#each this}}
+                        <li class="list-group-item list-group-item-info">
+                          <span class="text-capitalize">{{@key}}: </span>
+                          {{this}}
+                          
+                        </li>
+                      {{/each}}
+                      </ul>
                     </li>
                   {{/each}}
                   </ul>
