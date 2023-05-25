@@ -1,0 +1,66 @@
+<section>
+  <div class="text-center lh-1">    
+    <h2 class="text-info"> {{name}} info</h2>
+    <dfn class="fs-3">{{description}}</dfn>
+    <br>
+    <p class="fs-4">Computer price is {{price}}</p>
+  </div>
+</section>
+<section>
+  <ol class="list-group list-group-numbered">
+    <div class="fw-bold text-capitalize">users</div>
+    {{#each users}}
+    <li class="list-group-item">
+      <span class="text-capitalize"></span>
+      {{#if ''}}
+        {{this}}
+      {{/if}}
+      <ul class="list-group">
+      {{#each this}}
+        <li class="list-group-item list-group-item-primary">
+          <span class="text-capitalize">{{@key}}: </span>
+          {{!-- {{#if ''}} --}}
+            {{this}}
+          {{!-- {{/if}} --}}
+          <ul class="list-group">
+          {{#each this}}
+            <li class="list-group-item list-group-item-success">
+              <span class="text-capitalize">{{@key}}: </span>
+            {{#if ''}}
+                {{this}}
+              {{/if}}
+              <ul class="list-group">
+              {{#each this}}
+                <li class="list-group-item list-group-item-warning">
+                  <span class="text-capitalize">{{@key}}: </span>
+                  {{this}}
+                  <ul class="list-group">
+                  {{#each this}}
+                    <li class="list-group-item list-group-item-danger">
+                      <span class="text-capitalize">{{@key}}: </span>
+                      {{this}}
+                      <ul class="list-group">
+                      {{#each this}}
+                        <li class="list-group-item list-group-item-info">
+                          <span class="text-capitalize">{{@key}}: </span>
+                          {{this}}
+                          
+                        </li>
+                      {{/each}}
+                      </ul>
+                    </li>
+                  {{/each}}
+                  </ul>
+                </li>
+              {{/each}}
+              </ul>
+            </li>
+          {{/each}}
+          </ul>
+        </li>
+      {{/each}}
+      </ul>
+    </li>
+    {{/each}}
+  </ol>
+</section>
