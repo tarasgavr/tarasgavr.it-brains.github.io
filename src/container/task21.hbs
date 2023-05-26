@@ -1,66 +1,51 @@
-<section>
-  <div class="text-center lh-1">    
-    <h2 class="text-info"> {{name}} info</h2>
-    <dfn class="fs-3">{{description}}</dfn>
+{{#with heading}}  
+<section class="card">
+      {{#with main}}
+    <div class="card">
+      <div class="card-body">
+        <h1 class="text-dark">{{title}}</h1>
+        <dfn class="text-dark">{{text}}</dfn>
+        <br>
+        {{#with button_text}}
+          <button type="button" class="btn btn-primary">{{solid}}</button>
+          <br>
+          <br>
+          <button type="button" class="btn btn-outline-primary">{{outline}}</button>
+        {{/with}}
+      </div>
+    </div>
     <br>
-    <p class="fs-4">Computer price is {{price}}</p>
-  </div>
+      {{/with}}
+      {{#with second}}
+    <div class="card">
+      <div class="card-body">
+        <h2 class="text-secondary">{{title}}</h2>
+        <dfn class="text-dark">{{text}}</dfn>
+        <br>
+        {{#with button_text}}
+          <button type="button" class="btn btn-secondary">{{solid}}</button>
+          <br>
+          <br>
+          <button type="button" class="btn btn-outline-secondary">{{outline}}</button>
+        {{/with}}
+      </div>
+    </div>
+    <br>
+      {{/with}}
+      {{#with subblock}}
+    <div class="card">
+      <div class="card-body">
+        <h3 class="text-dark">{{title}}</h3>
+        <dfn class="text-dark">{{text}}</dfn>
+        <br>
+        {{#with button_text}}
+          <button type="button" class="btn btn-dark">{{solid}}</button>
+          <br>
+          <br>
+          <button type="button" class="btn btn-outline-dark">{{outline}}</button>
+        {{/with}}
+      </div>
+    </div>
+      {{/with}}
 </section>
-<section>
-  <ol class="list-group list-group-numbered">
-    <div class="fw-bold text-capitalize">users</div>
-    {{#each users}}
-    <li class="list-group-item">
-      <span class="text-capitalize"></span>
-      {{#if ''}}
-        {{this}}
-      {{/if}}
-      <ul class="list-group">
-      {{#each this}}
-        <li class="list-group-item list-group-item-primary">
-          <span class="text-capitalize">{{@key}}: </span>
-          {{!-- {{#if ''}} --}}
-            {{this}}
-          {{!-- {{/if}} --}}
-          <ul class="list-group">
-          {{#each this}}
-            <li class="list-group-item list-group-item-success">
-              <span class="text-capitalize">{{@key}}: </span>
-            {{#if ''}}
-                {{this}}
-              {{/if}}
-              <ul class="list-group">
-              {{#each this}}
-                <li class="list-group-item list-group-item-warning">
-                  <span class="text-capitalize">{{@key}}: </span>
-                  {{this}}
-                  <ul class="list-group">
-                  {{#each this}}
-                    <li class="list-group-item list-group-item-danger">
-                      <span class="text-capitalize">{{@key}}: </span>
-                      {{this}}
-                      <ul class="list-group">
-                      {{#each this}}
-                        <li class="list-group-item list-group-item-info">
-                          <span class="text-capitalize">{{@key}}: </span>
-                          {{this}}
-                          
-                        </li>
-                      {{/each}}
-                      </ul>
-                    </li>
-                  {{/each}}
-                  </ul>
-                </li>
-              {{/each}}
-              </ul>
-            </li>
-          {{/each}}
-          </ul>
-        </li>
-      {{/each}}
-      </ul>
-    </li>
-    {{/each}}
-  </ol>
-</section>
+{{/with}}
