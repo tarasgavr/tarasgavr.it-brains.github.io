@@ -21,17 +21,16 @@
           {{#each this}}
             <li class="list-group-item list-group-item-success">
               <span class="text-capitalize">{{@key}}: </span>
-              {{this}}
+                {{this}}         
               {{!-- {{#if display}} --}}
               <ul class="list-group">
               {{#each this}}
                 <li class="list-group-item list-group-item-info">
                   <span class="text-capitalize">{{@key}}: </span>
                   {{this}}
-                </li>
               {{/each}}
-              {{!-- {{else}} --}}
-              
+              {{!-- {{else}}                --}}
+                </li>
               </ul>
               {{!-- {{/if}} --}}
             </li>

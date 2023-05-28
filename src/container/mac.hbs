@@ -12,6 +12,12 @@
     {{#each features}}
     <li class="list-group-item">
       <span class="text-capitalize">{{@key}}</span>
+      
+      <ul class="list-group">
+      {{#each this}}
+        <li class="list-group-item list-group-item-primary">
+          <span class="text-capitalize">{{@key}}</span>
+
       {{#unless ''}}
         {{this}}
       {{/unless}}
@@ -21,11 +27,14 @@
           <span class="text-capitalize">{{@key}}: </span>
           {{!-- {{#if ''}} --}}
             {{this}}
-          {{!-- {{/if}} --}}
+          {{!-- {{/if}} --}
           <ul class="list-group">
           {{#each this}}
             <li class="list-group-item list-group-item-success">
               <span class="text-capitalize">{{@key}}: </span>
+
+              {{this}}
+
             {{!-- {{#if ''}} --}}
                 {{this}}
               {{!-- {{/if}} --}}
@@ -46,6 +55,7 @@
                 </li>
               {{/each}}
               </ul>
+
             </li>
           {{/each}}
           </ul>
@@ -55,4 +65,54 @@
     </li>
     {{/each}}
   </ol>
+
+</section>
+<section>
+  <ul class="list-group">
+    <div class="fw-bold text-capitalize">engine</div>
+    {{#each engine}}
+      <li class="list-group-item">
+        <span class="text-capitalize">{{@key}}: </span>
+        {{this}}
+        <ul class="list-group">
+        {{#each this}}
+          <li class="list-group-item list-group-item-primary">
+            <span class="text-capitalize">{{@key}}: </span>
+            {{this}}
+          </li>
+        {{/each}}
+        </ul>
+      </li>
+    {{/each}}
+  </ul>
+</section>
+<section>
+  <ul class="list-group">
+    <div class="fw-bold text-capitalize">fuel economy</div>
+    {{#each fuel_economy}}
+      <li class="list-group-item">
+        <span class="text-capitalize">{{@key}}: </span>
+        {{this}}
+      </li>
+    {{/each}}
+  </ul>
+</section>
+<section>
+  <ul class="list-group">
+    <div class="fw-bold text-capitalize">price</div>
+    {{#each price}}
+      <li class="list-group-item">
+        <span class="text-capitalize">{{@key}}: </span>
+        {{this}}
+        <ul class="list-group">
+        {{#each this}}
+          <li class="list-group-item list-group-item-primary">
+            <span class="text-capitalize">{{@key}}: </span>
+            {{this}}
+          </li>
+        {{/each}}
+        </ul>
+      </li>
+    {{/each}}
+  </ul>
 </section>
