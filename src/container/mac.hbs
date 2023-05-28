@@ -12,15 +12,50 @@
     {{#each features}}
     <li class="list-group-item">
       <span class="text-capitalize">{{@key}}</span>
+      
       <ul class="list-group">
       {{#each this}}
         <li class="list-group-item list-group-item-primary">
           <span class="text-capitalize">{{@key}}</span>
+
+      {{#unless ''}}
+        {{this}}
+      {{/unless}}
+      <ul class="list-group">
+      {{#each this}}
+        <li class="list-group-item list-group-item-primary">
+          <span class="text-capitalize">{{@key}}: </span>
+          {{!-- {{#if ''}} --}}
+            {{this}}
+          {{!-- {{/if}} --}
           <ul class="list-group">
           {{#each this}}
             <li class="list-group-item list-group-item-success">
               <span class="text-capitalize">{{@key}}: </span>
+
               {{this}}
+
+            {{!-- {{#if ''}} --}}
+                {{this}}
+              {{!-- {{/if}} --}}
+              <ul class="list-group">
+              {{#each this}}
+                <li class="list-group-item list-group-item-warning">
+                  {{!-- <span class="text-capitalize">{{@key}}: </span> --}}
+                  {{this}}
+                  <ul class="list-group">
+                  {{#each this}}
+                    <li class="list-group-item list-group-item-danger">
+                      {{!-- <span class="text-capitalize">{{@key}}: </span> --}}
+                      {{this}}
+                      
+                    </li>
+                  {{/each}}
+                  </ul>
+                </li>
+              {{/each}}
+              </ul>
+
             </li>
           {{/each}}
           </ul>
@@ -30,6 +65,7 @@
     </li>
     {{/each}}
   </ol>
+
 </section>
 <section>
   <ul class="list-group">
