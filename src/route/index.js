@@ -1188,7 +1188,7 @@ router.get('/task21', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('task21', {
     layout: 'basic',
-    title: 'About Senantics',
+    title: 'About Semantics',
     heading: {
       main: {
         title: 'JavaScript',
@@ -1286,7 +1286,7 @@ router.get('/task22', function (req, res) {
           sub_title:
             'Forward-thinking approach to programming',
           description:
-            ' Stay ahead of the curve with our forward-thinking approach to programming...',
+            'Stay ahead of the curve with our forward-thinking approach to programming...',
           button: 'Show more',
         },
         collaboration: {
