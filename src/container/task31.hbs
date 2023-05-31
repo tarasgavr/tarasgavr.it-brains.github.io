@@ -4,89 +4,40 @@
     <a class="btn btn-link col-2 text-info" href="{{href}}">{{text}}</a>
   {{/each}}
   {{#with button}}
-    <a class="btn btn-primary" href="{{href}}">{{text}}</a>
+    <button class="btn btn-primary" href="{{href}}">{{text}}</button>
   {{/with}}
 </section>
 {{/with}}
 <hr>
-{{#with section}}
-<section class="card">
-  <div class="card-body">
-    {{#with about_us}}
-      {{#with title_list}}
-        <div class="display-6 text-dark text-end">{{main}}</div>
-        <h2 class="text-dark text-end">{{sub}}</h2>
-      {{/with}}
-      {{#with button}}
-        <button type="button" class="btn btn-outline-info text-info">{{text}}</button>
-      {{/with}}
-    {{/with}}    
-    <br><br><br>
-    {{#with advantage}}
-    <section class="card">  
-      <div class="card-body">
-        <div class="display-5">{{title}}</div>
-        <br>
-        {{#with efficiency}}
-        <div class="card">
-          <div class="card-body">
-            <div class="display-4">{{title}}</div>
-            <h6 class="text-dark">{{sub_title}}</h6>
-            <p class="text-dark">{{description}}</p>
-            <br>
-            <button type="button" class="btn btn-outline-warning">{{button}}</button>
-          </div>
-        </div>
-        {{/with}}
-        {{#with innovation}}
-        <div class="card">
-          <div class="card-body">
-            <div class="text-center">
-              <div class="display-4">{{title}}</div>
-              <h6 class="text-dark">{{sub_title}}</h6>
-              <p class="text-dark">{{description}}</p>
-            </div>
-            <br>
-            <button type="button" class="btn btn-outline-warning">{{button}}</button>
-          </div>
-        </div>
-        {{/with}}
-        {{#with collaboration}}
-        <div class="card">
-          <div class="card-body">
-            <div class="text-end">
-              <div class="display-4">{{title}}</div>
-              <h6 class="text-dark">{{sub_title}}</h6>
-              <p class="text-dark">{{description}}</p>
-            </div>
-            <br>
-            <button type="button" class="btn btn-outline-warning">{{button}}</button>
-          </div>
-        </div>
-        {{/with}}
-      </div>
-    </section>
-    {{/with}}
-    {{#with agreement}} 
-    <section class="card">  
-      <div class="card-body">
-        <div class="display-5">{{title}}</div>
-        <br>
-        {{#with info}}
-        <div class="card">
-          <div class="card-body">
-            <h5 class="text-dark">{{sub_title}}</h5>
-            {{#with detail}}
-            <p class="text-dark">{{text}}</p>
-            <br>
-            <button type="button" class="btn btn-success">{{button}}</button>
-            {{/with}}
-          </div>
-        </div>
-        {{/with}}
-    {{/with}}
-      </div>
-    </section>
-  </div>
+{{#with header}}
+<section>
+  <h1 class="text-dark">{{title}}</h1>
+  <p class="text-dark">{{description}}</p>
+  {{#with button}}    
+    <button class="btn btn-primary" href="{{link}}">{{text}}</button>
+  {{/with}}
 </section>
 {{/with}}
+<hr>
+{{#with city}}
+  <section>
+    <h2 class="text-dark">{{title}}</h2>
+    <div class="row">      
+    {{#each cards}}
+      <div class="card g-0 col-md-6">      
+        {{#with picture}}
+          <img class="card-img-top" src="{{src}}" alt="{{alt}}">
+        {{/with}}
+        <div class="card-body">
+          <div class="card-title">{{title}}</div>
+          <p class="card-text">{{description}}</p>
+          {{#with button}}    
+            <button class="btn btn-primary" href="{{href}}">{{text}}</button>
+          {{/with}}
+        </div>
+      </div>
+    {{/each}}
+    </div>
+  </section>
+{{/with}}
+<hr>
