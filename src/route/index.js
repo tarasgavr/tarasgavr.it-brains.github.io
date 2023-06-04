@@ -1577,6 +1577,7 @@ router.get('/shophome', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shophome', {
     layout: 'shop',
+    title: 'shophome',
     navigation: {
       links: [
         {
