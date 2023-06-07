@@ -24,12 +24,12 @@
       <div class="col">
         <div class="card text-bg-dark mb-3">
           {{#if isTop}}
-            <div class="badge text-bg-success rounded-pill position-absolute top-10 end-50">Top</div>
+            <span class="badge bg-success rounded-pill">Top</span>
           {{/if}}
           {{#if isNew}}
-            <div class="badge text-bg-danger rounded-pill position-absolute top-10 end-0">New</div>
+            <span class="badge bg-danger rounded-pill">New</span>
           {{/if}}
-          <div class="card-header card-title position-relative">{{title}}</div>
+          <div class="card-header card-title">{{title}}</div>
           <div class="card-body">
             <p class="card-text">{{description}}</p>
           </div>
@@ -63,14 +63,16 @@
       <div class="col">
         <div class="card mb-3">
         <img class="card-img-top" src="{{image}}" alt="#">  
-          <div class="card-title mb-2">{{title}}</div>
-          {{#if isHot}}
-            <div class="badge text-bg-info rounded-pill position-absolute top-50 end-50">Hot</div>
-          {{/if}}
-          {{#if isNew}}
-            <div class="badge text-bg-warning rounded-pill position-absolute top-50 end-0">New</div>
-          {{/if}}
-          <div class="card-body position-relative">
+          <div class="card-title mb-2">
+            {{title}}
+            {{#if isHot}}
+              <span class="badge bg-info rounded-pill">Hot</span>
+            {{/if}}
+            {{#if isNew}}
+              <span class="badge bg-warning rounded-pill">New</span>
+            {{/if}}
+          </div>
+          <div class="card-body">
             <p class="card-text">{{description}}</p>
           </div>
         </div>
@@ -108,8 +110,8 @@
       </div>
     </div>
   {{/with}}
-</section>
 <hr>
+</section>
 <section>
   <div class="col-sm-10 row row-cols-1 row-cols-md-5 g-4">
   {{#each footer}}
@@ -117,7 +119,11 @@
       <ul class="nav">
         <li class="nav-item">                
           {{#each this}}
-            <a href="{{link}}" class="text-primary nav-link">{{text}}</a>
+            {{#if @last}}
+              <a href="{{link}}" class="disabled text-primary nav-link">{{text}}</a>  
+            {{else}}
+              <a href="{{link}}" class="text-primary nav-link">{{text}}</a>
+            {{/if}}
           {{/each}}
         </li>
       </ul>
