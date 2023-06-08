@@ -23,13 +23,15 @@
     {{#each cards}}
       <div class="col">
         <div class="card text-bg-dark mb-3">
-          {{#if isTop}}
-            <span class="badge bg-success rounded-pill">Top</span>
-          {{/if}}
-          {{#if isNew}}
-            <span class="badge bg-danger rounded-pill">New</span>
-          {{/if}}
-          <div class="card-header card-title">{{title}}</div>
+          <div class="card-header card-title">
+            {{title}}
+            {{#if isTop}}
+              <span class="badge bg-success rounded-pill">Top</span>
+            {{/if}}
+            {{#if isNew}}
+              <span class="badge bg-danger rounded-pill">New</span>
+            {{/if}}
+          </div>
           <div class="card-body">
             <p class="card-text">{{description}}</p>
           </div>

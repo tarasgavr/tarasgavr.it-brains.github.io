@@ -1,23 +1,58 @@
 {{#with navigation}}  
 <section>
-  {{#each links}}
-    <a class="btn btn-link " href="{{href}}">{{text}}</a>
-  {{/each}}
-  {{#with button}}
-    <button class="btn btn-primary" href="{{href}}">{{text}}</button>
-  {{/with}}
+  <div class="row card">
+    <div class="card-body">
+      {{#each links}}
+        {{#if href}}
+          <a class="text-decoration-none" href="{{href}}">{{text}}</a>
+        {{else}}
+          <a class="text-decoration-none text-muted" href="{{href}}">{{text}}</a>
+        {{/if}}
+      {{/each}}
+    </div>
+  </div>
 </section>
 {{/with}}
 <hr>
-{{#with header}}
 <section>
-  <h1 class="text-dark">{{title}}</h1>
+  <h1 class="text-dark">{{header}}</h1>
+  <br><br><br>
+  <form action="#">
+    <div class="row">
+      <div class="col-8">
+        {{#with contacts_data}}
+          <h2 class="text-dark">{{title}}</h2>
+          {{#each buttons}}
+            {{#if isPrimary}}
+              <button type="submit" clasS="btn btn-warning">{{text}}</button>
+            {{/if}}
+            {{#if isOutline}}
+              <button type="submit" clasS="btn btn-outline-warning">{{text}}</button>
+            {{/if}}
+          {{/each}}
+          {{#with form}}
+          <div class="row">
+            <div class="col-4">
+              <div class="input-group mt-3">
+                {{#with input}}
+                  {{#with surname}}
+                    <label class="form-label" for="surname-input">{{label}}</label>
+                    <input type="text" id='surname-input' class="form-control" placeholder="{{placeholder}}">
+                    <div class="form-text text-muted">{{caption}}</div>
+                  {{/with}}
+                {{/with}}
+              </div>
+            </div>
+          </div>
+          {{/with}}
+        {{/with}}
+      </div>
+    </div>
+  </form>
   <p class="text-dark">{{description}}</p>
   {{#with button}}    
-    <button clasS="btn btn-primary" href="{{link}}">{{text}}</button>
   {{/with}}
 </section>
-{{/with}}
 <hr>
 {{#with city}}
   <section>
