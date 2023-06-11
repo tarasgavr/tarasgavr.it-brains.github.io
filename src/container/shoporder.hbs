@@ -1,4 +1,4 @@
-{{#with navigation}}  
+0{{#with navigation}}  
 <section>
   <div class="row card">
     <div class="card-body">
@@ -43,17 +43,18 @@
                 </div>
             {{/each}}
           </div>
-        <hr>
-        {{#each switch}}
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" {{#if isActive}} checked {{/if}}>
-            <label class="form-check-label">{{text}}</label>
-          </div>
-        {{/each}}
-        <hr>
+          <hr>
+          {{#each switch}}
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" {{#if isActive}} checked {{/if}}>
+              <label class="form-check-label">{{text}}</label>
+            </div>
+          {{/each}}
+          <hr>
           {{/with}}
         </div>
-        {{/with}}
+        {{/with}}<!-- end of contacts_data -->
+        <br><hr><br>
         {{#with delivery}}
         <div>          
           <h4 class="text-dark">{{title}}</h4>
@@ -71,27 +72,27 @@
           {{/each}}
           </div>
           <hr>
-        {{#each delivery_type}}
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" 
-            {{#if @first}} checked {{/if}}>
-            <label class="form-check-label" for="flexRadioDefault2">{{type}}</label>
-          </div>
-        {{/each}}
-        <hr>
-        {{#with payment}}
-        <div>
-          <h4 class="text-dark">{{title}}</h4>
-          {{#each list}}
+          {{#each delivery_type}}
             <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" 
-            {{#if @first}} checked {{/if}}>
-            <label class="form-check-label" for="flexRadioDefault2">{{type}}</label>
-            <div class="text-secondary">{{description}}</div>
-          </div>
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" 
+              {{#if @first}} checked {{/if}}>
+              <label class="form-check-label" for="flexRadioDefault2">{{type}}</label>
+            </div>
           {{/each}}
-        </div>
-        {{/with}}
+          <hr>
+          {{#with payment}}
+          <div>
+            <h4 class="text-dark">{{title}}</h4>
+            {{#each list}}
+              <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" 
+              {{#if @first}} checked {{/if}}>
+              <label class="form-check-label" for="flexRadioDefault2">{{type}}</label>
+              <div class="text-secondary">{{description}}</div>
+            </div>
+            {{/each}}
+          </div>
+          {{/with}}
         </div>
         {{/with}} <!-- end of delivery -->
         <br><hr><br>
@@ -113,8 +114,8 @@
             </div>
           {{/with}} <!-- end of form -->
         </div>
-        {{/with}} <!-- end of contacts_data -->    
-        <hr>
+        {{/with}} <!-- end of contacts_data -->
+        <br><hr><br>
         <div class="mt-4">
           <label class="form-label" for="surname-input">Коментар</label>
           <input type="text" id='surname-input' class="form-control" placeholder="Я хочу, щоб">
@@ -122,9 +123,10 @@
         <br><hr><br>
         {{#with coupon}}
         <div>
-          <h3 class="text-dark">{{title}} отримувача</h3>
+          <h3 class="text-dark">{{title}}</h3>
           <br>
           {{#with select}}
+          <div>
             {{#with availabel_coupon}}
               <label for="sel-place" class="form-label">{{label}}</label>
               <select name="sel-place" class="form-select form-select-lg">
@@ -145,8 +147,10 @@
               </select>
             {{/with}}
             <br>
+          </div>
           {{/with}}
           {{#each add}}
+          <div>
             {{#with this}}
               <div class="mt-4">              
                 <label class="form-label" for="surname-input">{{label}}</label>
@@ -154,9 +158,81 @@
                 <div class="form-text text-muted">{{caption}}</div>
               </div>
             {{/with}}
+          </div>  
           {{/each}}
         </div>
-        {{/with}}
+        {{/with}} <!-- end of coupon -->
+        <br><hr><br>
+        {{#with quiz}}
+        <div>
+          <h3 class="text-dark">{{title}}</h3>
+          <br>
+          {{#with preference}}
+          <div>
+            <h5 class="text-dark">{{title}}</h5>
+            {{#each options}}
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" 
+                {{#if @first}} checked {{/if}}>
+                <label class="form-check-label" for="flexRadioDefault2">{{this}}</label>
+              </div>
+            {{/each}}
+            <br>
+          </div>
+          {{/with}}
+           <br>
+          {{#with your_expirience}}
+            <div class="mt-4">
+              <label class="form-label" for="your_expirience-input">{{label}}</label>
+              <input type="text" id='your_expirience-input' class="form-control">
+            </div>
+          {{/with}}
+            <br>
+          {{#with purchase_frequency}}
+            <div>
+              <label for="sel-place" class="form-label">{{label}}</label>
+              <select name="sel-place" class="form-select">
+                <option selected>{{placeholder}}</option>
+                {{#each options}}
+                <option value="{{value}}">{{text}}</option>
+                {{/each}}
+              </select>
+            </div>
+          {{/with}}
+            <br>
+          {{#with factors}}
+            <div>
+            <h5 class="text-dark">{{title}}</h5>
+            {{#each options}}
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="flexcheckbodDefault" id="flexRadioDefault2" 
+                {{#if @first}} checked {{/if}}>
+                <label class="form-check-label" for="flexcheckbodDefault2">{{this}}</label>
+              </div>
+            {{/each}}
+            <br>
+          </div>
+          {{/with}}
+        </div>
+        {{/with}} <!-- end of quiz -->
+        <br><hr><br>        
+        <div class="col-sm-12 row row-cols-1 row-cols-md-5 g-1">
+        {{#each footer}}
+          <div class="col-2">
+            <ul class="nav">
+              <li class="nav-item">                
+                {{#each this}}
+                  {{#if @last}}
+                    <a href="{{link}}" class="disabled text-primary nav-link">{{text}}</a>  
+                  {{else}}
+                    <a href="{{link}}" class="text-primary nav-link">{{text}}</a>
+                  {{/if}}
+                {{/each}}
+              </li>
+            </ul>
+          </div>
+        {{/each}}
+        </div><!-- end of footer -->
       </div> <!-- end of col-8 -->
     </div> <!-- end of global row -->
   </form>
