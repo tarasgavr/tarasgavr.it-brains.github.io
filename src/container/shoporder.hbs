@@ -1,4 +1,4 @@
-0{{#with navigation}}  
+{{#with navigation}}  
 <section>
   <div class="row card">
     <div class="card-body">
@@ -216,7 +216,7 @@
         </div>
         {{/with}} <!-- end of quiz -->
         <br><hr><br>        
-        <div class="col-sm-12 row row-cols-1 row-cols-md-5 g-1">
+        <div class="col-12 row row-cols-1 row-cols-md-5 g-1">
         {{#each footer}}
           <div class="col-2">
             <ul class="nav">
@@ -234,6 +234,56 @@
         {{/each}}
         </div><!-- end of footer -->
       </div> <!-- end of col-8 -->
+      <div class="col-4">
+        <div class="card">
+          <div class="card-body">
+            {{#each action_block}}
+              <div>
+                {{#if isSuccess}}
+                  <button class="btn btn-success">{{text}}</button>
+                {{else}}
+                  {{#if isDanger}}
+                    <button class="btn btn-danger">{{text}}</button>
+                  {{else}}
+                    <button class="btn btn-info">{{text}}</button>
+                  {{/if}}
+                {{/if}}
+              </div>
+            {{/each}}
+          </div>
+        </div>
+        {{#with total}}
+        <div class="card">
+          <div class="card-body">
+            <h4>{{title}}</h4>
+            {{#each item_list}}
+              <div class="row">
+                {{name}}:{{price}}
+              </div>
+            {{/each}}
+            {{#each additional_info}}
+              <div class="row">
+                {{text}}:{{value}}
+              </div>
+            {{/each}}
+            {{#with total_price}}
+              <div class="row">
+                {{text}}:{{value}}
+              </div>
+            {{/with}}
+            {{#each button}}
+              <div>
+                {{#if isPrimary}}
+                  <button class="btn btn-primary">{{text}}</button>
+                {{else}}
+                  <button class="btn btn-outline-primary">{{text}}</button>
+                {{/if}}
+              </div>
+            {{/each}}
+          </div>
+        </div>
+        {{/with}}
+      </div>
     </div> <!-- end of global row -->
-  </form>
+2  </form>
 </section> <!-- end of col-12 -->
