@@ -11,4 +11,24 @@
   </div>
 </section>
 {{/with}}
-<hr>
+<br>
+{{#with header}}
+  <section>
+    <h1 class="text-dark">{{title}}</h1>
+    <a class="btn btn-outline-secondary" href="{{button.link}}">{{button.text}}</a>
+    <hr>
+{{/with}}
+{{#each goodsBlock}}
+<div class="card">
+  <div class="grid" style="--bs-columns: 12; --bs-gap: 1rem;">
+        <div class="g-col-2">
+          <img src="{{image}}" alt="{{name}}">
+        </div>
+        <div class="g-col-4">
+          <div class="text-dark">{{name}}</div>
+          <p class="text-secondary">{{description}}</p>
+        </div>
+  </div>
+</div>
+{{/each}}
+  </section>
