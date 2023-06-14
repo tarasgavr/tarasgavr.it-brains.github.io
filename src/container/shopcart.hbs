@@ -1,0 +1,14 @@
+{{#with navigation}}  
+<section>
+  <div class="row card">
+    <ul class="nav">
+        {{#each links}}
+      <li class="nav-item">
+        <a class="nav-link {{#if @last}} disabled {{/if}}" href="{{href}}">{{text}}</a>
+      </li>
+        {{/each}}
+    </ul>
+  </div>
+</section>
+{{/with}}
+<hr>
