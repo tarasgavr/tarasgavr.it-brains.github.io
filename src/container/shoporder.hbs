@@ -3,11 +3,7 @@
   <div class="row card">
     <div class="card-body">
       {{#each links}}
-        {{#if href}}
-          <a class="text-decoration-none" href="{{href}}">{{text}}</a>
-        {{else}}
-          <a class="text-decoration-none text-muted" href="{{href}}">{{text}}</a>
-        {{/if}}
+        <a class="text-decoration-none {{#unless href}} text-muted {{/unless}}" href="{{href}}">{{text}}</a>
       {{/each}}
     </div>
   </div>
@@ -222,11 +218,7 @@
             <ul class="nav">
               <li class="nav-item">                
                 {{#each this}}
-                  {{#if @last}}
-                    <a href="{{link}}" class="disabled text-primary nav-link">{{text}}</a>  
-                  {{else}}
-                    <a href="{{link}}" class="text-primary nav-link">{{text}}</a>
-                  {{/if}}
+                  <a href="{{link}}" class="text-primary nav-link {{#if @last}} disabled {{/if}}">{{text}}</a>
                 {{/each}}
               </li>
             </ul>
@@ -285,5 +277,5 @@
         {{/with}}
       </div>
     </div> <!-- end of global row -->
-2  </form>
+  </form>
 </section> <!-- end of col-12 -->

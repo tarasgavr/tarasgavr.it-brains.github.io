@@ -3,12 +3,8 @@
   <div class="row card">
     <ul class="nav">
         {{#each links}}
-      <li class="nav-item">      
-          {{#if @last}}
-            <a class="nav-link disabled" href="{{href}}">{{text}}</a>
-          {{else}}
-            <a class="nav-link" href="{{href}}">{{text}}</a>
-          {{/if}}
+      <li class="nav-item">
+        <a class="nav-link {{#if @last}} disabled {{/if}}" href="{{href}}">{{text}}</a>
       </li>
         {{/each}}
     </ul>
