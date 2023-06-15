@@ -17,18 +17,36 @@
     <h1 class="text-dark">{{title}}</h1>
     <a class="btn btn-outline-secondary" href="{{button.link}}">{{button.text}}</a>
     <hr>
-{{/with}}
-{{#each goodsBlock}}
-<div class="card">
-  <div class="grid" style="--bs-columns: 12; --bs-gap: 1rem;">
-        <div class="g-col-2">
-          <img src="{{image}}" alt="{{name}}">
-        </div>
-        <div class="g-col-4">
-          <div class="text-dark">{{name}}</div>
-          <p class="text-secondary">{{description}}</p>
-        </div>
-  </div>
-</div>
-{{/each}}
   </section>
+{{/with}}
+<section>
+{{#each goodsBlock}}
+  <div class="card">
+    <div class="row ps-2">
+      <div class="text-end col-2">
+        <img src="{{image}}" alt="{{name}}">
+      </div>
+      <div class="col-4">
+        <h3 class="text-dark">{{name}}</h3>
+        <p class="text-secondary">{{description}}</p>
+      </div>
+      <div class="col-2">
+        <div>{{price.title}}</div>
+        <div>{{price.value}}</div>
+      </div>
+      <div class="col-1 d-flex align-items-center">
+        <abbr title="amount">{{amount}}</abbr>
+      </div>
+      <div class="col-3 d-flex flex-column align-self-center">
+        {{#each buttons}}
+          <div class="w-50">
+            <button type="button" class="btn {{#if isPrimary}} btn-primary {{else}} btn-outline-danger {{/if}}">
+              {{text}}
+            </button>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+{{/each}}
+</section>
