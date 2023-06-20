@@ -130,7 +130,8 @@
             <div class="row">
               {{#each buttons}}
                 <div class="col-4">
-                  <a href="{{link}}" class="btn {{#if isPrimary}} btn-primary {{else}}{{#if isSecondary}} btn-outline-secondary {{else}} btn-outline-danger {{/if}}{{/if}}">{{text}}</a>
+                  <a href="{{link}}" class="btn {{#if isPrimary}} btn-primary {{else}}
+                  {{#if isSecondary}} btn-outline-secondary {{else}} btn-outline-danger {{/if}}{{/if}}">{{text}}</a>
                 </div>
               {{/each}} <!-- end of buttons -->
             </div>
@@ -143,8 +144,8 @@
               <div class="col-4">
                 <div class="card">
                   <div class="card-body">
-                    <div class="fs-4 fw-bold mb-2">{{name}}</div>
-                    <div class="fw-bold mb-2">{{phone}}</div>
+                    <div class="fw-bold mb-2">{{name}}</div>
+                    <div class="mb-2">{{phone}}</div>
                     <a href="{{button.link}}" class="btn btn-primary">{{button.text}}</a>
                   </div>
                 </div>
@@ -152,22 +153,23 @@
             {{/each}} <!-- end of users -->
           </div>
         {{/with}} <!-- end of recipients -->
-      </div>
-    </div>
-  </section>
-{{/with}}
-<hr>
-{{#with subscribe}}
-  <section class="mb-3">
-    <div class="text-bg-dark w-100">
-      <div class="mb-2">
-        <h2 class="text-light">{{header}}</h2>
-        <p class="text-light">{{description}}</p>
-        {{#each buttons}}
-          <div class="pt-2">
-            <a href="{{link}}" class="btn btn-primary">{{text}}</a>
+        {{#with contacts}}
+          <div class="fs-4 fw-bold mb-2">{{title}}</div>
+          <div class="row">
+            {{#each contactData}}
+              <div class="col-4">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="mb-2">{{title}}</div>
+                    <div class="fw-bold mb-2">{{value}}</div>
+                    <a href="{{button.link}}" class="btn {{#if isPrimary}} btn-primary {{else}}
+                    {{#if isSecondary}} btn-outline-secondary {{else}} btn-outline-danger {{/if}}{{/if}}">{{button.text}}</a>
+                  </div>
+                </div>
+              </div>
+            {{/each}} <!-- end of contactData -->
           </div>
-        {{/each}}
+        {{/with}} <!-- end of contacts -->
       </div>
     </div>
   </section>
