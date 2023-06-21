@@ -131,7 +131,7 @@
               {{#each buttons}}
                 <div class="col-4">
                   <a href="{{link}}" class="btn {{#if isPrimary}} btn-primary {{else}}
-                  {{#if isSecondary}} btn-outline-secondary {{else}} btn-outline-danger {{/if}}{{/if}}">{{text}}</a>
+                  {{#if isSecondary}}btn-outline-secondary {{else}} btn-outline-danger {{/if}}{{/if}}">{{text}}</a>
                 </div>
               {{/each}} <!-- end of buttons -->
             </div>
@@ -162,8 +162,11 @@
                   <div class="card-body">
                     <div class="mb-2">{{title}}</div>
                     <div class="fw-bold mb-2">{{value}}</div>
-                    <a href="{{button.link}}" class="btn {{#if isPrimary}} btn-primary {{else}}
-                    {{#if isSecondary}} btn-outline-secondary {{else}} btn-outline-danger {{/if}}{{/if}}">{{button.text}}</a>
+                    {{#with button}}                      
+                        <a href="{{
+                          link}}" class="btn {{#if isPrimary}} btn-primary {{else}}
+                        {{#if isSecondary}} btn-outline-secondary {{else}} btn-outline-danger {{/if}}{{/if}}">{{text}}</a>
+                    {{/with}}
                   </div>
                 </div>
               </div>
