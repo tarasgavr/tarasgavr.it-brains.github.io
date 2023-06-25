@@ -3053,7 +3053,7 @@ router.get('/shopreview', function (req, res) {
 })
 
 // ================================================================
-outer.get('/shopcatalog', function (req, res) {
+router.get('/shopcatalog', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
