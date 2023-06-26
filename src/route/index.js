@@ -3136,7 +3136,6 @@ router.get('/shopcatalog', function (req, res) {
           link: 'https://www.youtube.com/',
         },
       },
-
       filterList: [
         {
           title: 'Готов к отправке',
@@ -3329,7 +3328,6 @@ router.get('/shopcatalog', function (req, res) {
         },
       ],
     },
-
     footer: [
       [
         {
