@@ -42,12 +42,13 @@ router.get('/', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('index', {
+    layout:'index', 
     page: {
-      title: "Resume | Main",
+      title: "Resume project",
     },
-    header,
-    footer,
-  })
+    firstname,
+    lastname
+,  })
   //                  ↑↑ сюди вводимо JSON дані
 })
 // ================================================================
@@ -55,9 +56,8 @@ router.get('/', function (req, res) {
 router.get('/summary', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('summary', {
-    page: {
-      title: "Resume | Summary",
-    },
+    layout: 'shop',
+    title: "Resume | Summary",
     header,
     main: {      
       summary: {
@@ -78,9 +78,8 @@ router.get('/summary', function (req, res) {
 router.get('/education', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('education', {
-    page: {
-      title: "Resume | Education",
-    },
+    layout: 'shop',
+    title: "Resume | Education",
     header,
     main: {      
       educations: [
@@ -157,9 +156,8 @@ router.get('/education', function (req, res) {
 router.get('/skills', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('skills', {
-    page: {
-      title: "Resume | Skills",
-    },
+    layout: 'shop',
+    title: "Resume | Skills",
     header,
     main: {      
       skills: [
@@ -224,10 +222,8 @@ router.get('/skills', function (req, res) {
 router.get('/works', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('works', {
-    layout: 'big', 
-    page: {
-      title: "Resume | Works",
-    },
+    layout: 'shop',
+    title: "Resume | Works",
     header,
     main: {            
       works: [
@@ -337,7 +333,7 @@ router.get('/works', function (req, res) {
 router.get('/person', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('person', {
-    layout: 'basic',
+    layout: 'shop',
     title: 'Abstract summary',
     person: {
       name: 'Emma Johnson',
@@ -439,6 +435,7 @@ router.get('/person', function (req, res) {
 router.get('/bio', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('bio', {
+    layout: 'shop',
     title: 'Famous biography',
     name: 'Albert Einstein',
     birthdate: 'March 14, 1879',
@@ -536,7 +533,7 @@ router.get('/bio', function (req, res) {
 router.get('/web', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('web', {
-    layout: 'basic',
+    layout: 'shop',
     title: 'Web technologies',
     web: {
       languages: [
@@ -666,7 +663,7 @@ router.get('/web', function (req, res) {
 router.get('/program', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('program', {
-    layout: 'basic',
+    layout: 'shop',
     title: 'Tour program', 
     program: {
       excursion: {
@@ -755,7 +752,7 @@ router.get('/js', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('js', {
-    layout: 'basic',
+    layout: 'shop',
     title: 'About JavaScript',
     name: 'JavaScript',
     description:
@@ -837,7 +834,7 @@ router.get('/car', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('car', {
-    layout: 'basic',
+    layout: 'shop',
     title: 'About Toyota',
     make: 'Toyota',
     model: 'Camry',
@@ -938,7 +935,7 @@ router.get('/mac', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('mac', {
-    layout: 'basic',
+    layout: 'shop',
     title: 'About MacBook',
     name: 'Apple MacBook Pro',
     description: 'The ultimate notebook for power users',
@@ -1028,7 +1025,7 @@ router.get('/facebook', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('facebook', {
-    layout: 'basic',
+    layout: 'shop',
     title: 'About Facebook',
     name: 'Facebook',
     users: [
@@ -1187,7 +1184,7 @@ router.get('/task21', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('task21', {
-    layout: 'basic',
+    layout: 'shop',
     title: 'About Semantics',
     heading: {
       main: {
@@ -1258,7 +1255,7 @@ router.get('/task22', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('task22', {
-    layout: 'basic',
+    layout: 'shop',
     title: 'About InnovaMind',
     page_header: {
       title: 'InnovaMind',
@@ -1319,7 +1316,7 @@ router.get('/task31', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('task31', {
-    layout: 'basic',
+    layout: 'shop',
     title: 'taSk31',
     navigation: {
       links: [
