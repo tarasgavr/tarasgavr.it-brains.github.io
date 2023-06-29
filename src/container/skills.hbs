@@ -1,9 +1,12 @@
+<header>
+  {{> header }}
+</header>
 <section>
   <div>
     {{> title data="My skills" line=true big=true }}
-      <ul>
+      <ul class="list-group list-group-flush">
     {{#each main.skills}}
-        <li>{{title}}</li>
+        <li class="list-group-item list-group-item-primary">{{title}}</li>
     {{/each}}
       </ul>
   </div>
@@ -11,11 +14,14 @@
 <section>
   <div>
     {{> title data="My hobbies" line=true }}
-      <ol>
+      <ol class="list-group list-group-numbered">
     {{#each main.hobbies}}
-        <li>{{title}} {{#if isMain}} (favorite) {{/if}}
+        <li class="list-group-item list-group-item-primary-">{{title}} {{#if isMain}} (favorite) {{/if}}
         </li>
     {{/each}}
       </ol>
   </div>
 </section>
+<footer>
+  {{> footer }}
+</footer>
