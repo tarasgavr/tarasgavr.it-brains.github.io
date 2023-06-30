@@ -1,12 +1,12 @@
 <section>
 {{#with person}}
   <center>
-    {{> title data=name big=true }}
+    {{> title data=name big=false }}
   </center>
-  <table>
+  <table class="table table-striped-column">
     <tbody>
       <tr>
-        <td>Personal information</td>
+        <td class="fs-4">Personal information</td>
         <td>
           <ul>
             <li>
@@ -27,7 +27,7 @@
         </td>
       </tr>
       <tr>
-        <td>Education</td>
+        <td class="fs-4">Education</td>
         <td>
           <ul>
             {{#each education}}
@@ -48,7 +48,7 @@
         </td>
       </tr>
       <tr>
-        <td>Work experience</td>
+        <td class="fs-4">Work experience</td>
         <td>
           <ul>
             {{#each workExperience}}
